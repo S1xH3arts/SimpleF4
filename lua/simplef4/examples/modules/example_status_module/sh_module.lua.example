@@ -1,0 +1,28 @@
+local C = SimpleF4.Config
+
+SimpleF4.RegisterModule("ExampleStatus", {
+    Name = "Example Status",
+    Description = "Example community module.",
+    Version = "1.0.0",
+
+    -- Hard dependencies stop the module from being ready.
+    Depends = {
+        "HUD",
+    },
+
+    -- Optional dependencies are shown in Module Status but do not block.
+    OptionalDepends = {
+        "Notifications",
+    },
+
+    EnabledByDefault = true,
+})
+
+C.Modules = C.Modules or {}
+
+C.Modules.ExampleStatus =
+    C.Modules.ExampleStatus
+    or {
+        Enabled = true,
+        AllowPlayerDisable = true,
+    }

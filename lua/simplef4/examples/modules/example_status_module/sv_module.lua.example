@@ -1,0 +1,4 @@
+-- Server-side module code is optional.
+
+-- Example:
+-- util.AddNetworkString("SimpleF4.ExampleStatus")

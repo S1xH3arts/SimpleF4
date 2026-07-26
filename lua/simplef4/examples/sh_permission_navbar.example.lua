@@ -1,0 +1,33 @@
+-- Example configuration for permission-aware navbar links.
+-- Copy these entries into C.NavButtons / C.NavDropdown in sh_config.lua.
+
+-- C.NavButtons = {
+--     {
+--         Name = "Staff",
+--         Type = "url",
+--         Value = "https://example.com/staff",
+--         UserGroups = {
+--             admin = true,
+--             superadmin = true,
+--         },
+--     },
+--     {
+--         Name = "Police",
+--         Type = "chat",
+--         Value = "/laws",
+--         Categories = {
+--             ["Police Department"] = true,
+--         },
+--     },
+-- }
+--
+-- C.NavDropdown.Items supports the same:
+--
+-- {
+--     Name = "Developer Tools",
+--     Type = "command",
+--     Value = "some_command",
+--     CustomCheck = function(ply)
+--         return ply:IsSuperAdmin()
+--     end,
+-- }

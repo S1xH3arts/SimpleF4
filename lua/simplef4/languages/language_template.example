@@ -1,0 +1,20 @@
+-- Copy this file to a new .lua file in this folder.
+-- Example: pt.lua
+--
+-- Only include phrases you want to translate.
+-- Anything missing automatically falls back to en.lua.
+
+SimpleF4.RegisterLanguage("pt", {
+    Dashboard = "Dashboard",
+    Jobs = "Jobs",
+    Entities = "Entities",
+    Weapons = "Weapons",
+    Settings = "Settings",
+
+    WelcomeBack = "Welcome back, {name}",
+
+    -- Keep replacement tokens exactly as written:
+    Results = "{count} results",
+    Requires = "Requires: {reason}",
+    Wait = "WAIT {seconds}s",
+}, "Português")

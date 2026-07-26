@@ -1,0 +1,44 @@
+local C = SimpleF4.Config
+
+if not SimpleF4.IsModuleEnabled(
+    "ExampleStatus"
+) then
+    return
+end
+
+hook.Add(
+    "HUDPaint",
+    "SimpleF4.ExampleStatus.Paint",
+    function()
+        -- Draw your module here.
+    end
+)
+
+hook.Add(
+    "SimpleF4_PopulateModuleSettingsSections",
+    "SimpleF4.ExampleStatus.Settings",
+    function(sections)
+        table.insert(sections, {
+            ID = "ExampleStatus",
+            Order = 200,
+            Label = "ExampleStatusSettings",
+
+            Items = {
+                {
+                    Type = "toggle",
+                    Key = "ExampleStatusEnabled",
+                    Label = "ExampleStatusEnabled",
+                    Description =
+                        "ExampleStatusEnabledDesc",
+                },
+            },
+        })
+    end
+)
+
+-- Runtime/provider information shown to superadmins.
+SimpleF4.SetModuleRuntimeStatus(
+    "ExampleStatus",
+    "ready",
+    "Example provider detected."
+)
