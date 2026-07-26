@@ -2,7 +2,7 @@
 
 SimpleF4 is an open-source DarkRP F4 menu and HUD framework for Garry's Mod.
 
-**Current release:** `v42.0.1 stable — Release Polish`
+**Current release:** `v42.0.6 stable — Release Polish`
 
 ## Features
 
@@ -112,7 +112,7 @@ SimpleF4.ReleaseName
 For this release:
 
 ```text
-Version: 42.0.1
+Version: 42.0.6
 Channel: stable
 Name: Release Polish
 ```
