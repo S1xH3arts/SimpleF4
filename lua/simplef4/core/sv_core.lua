@@ -360,14 +360,7 @@ local function addSimpleF4Command(name, permissionKey, callback)
     end)
 end
 
-addSimpleF4Command("simplef4_reload", "reload", function(ply), function(ply)
-    if not canReload(ply) then
-        if IsValid(ply) then
-            ply:ChatPrint("[SimpleF4] You do not have permission to reload the menu.")
-        end
-        return
-    end
-
+addSimpleF4Command("simplef4_reload", "reload", function(ply)
     print("[SimpleF4] Live reload requested by "
         .. (IsValid(ply) and ply:Nick() or "server console")
         .. ".")
@@ -452,6 +445,52 @@ end)
 -- VERSION / RELEASE / UPDATE CHECK
 --=====================================================
 
+
+local function printStartupVersion()
+    print("========================================")
+    print(
+        "[SimpleF4] Installed version: v"
+        .. tostring(SimpleF4.Version or "unknown")
+    )
+    print(
+        "[SimpleF4] Release channel: "
+        .. tostring(SimpleF4.Release or "unknown")
+    )
+    print(
+        "[SimpleF4] Release name: "
+        .. tostring(SimpleF4.ReleaseName or "unknown")
+    )
+
+    local settings =
+        SimpleF4.Config.UpdateCheck or {}
+
+    local provider =
+        string.lower(
+            tostring(
+                settings.Provider
+                or "github"
+            )
+        )
+
+    print(
+        "[SimpleF4] Update provider: "
+        .. provider
+    )
+
+    if settings.Enabled == true then
+        print(
+            "[SimpleF4] GitHub update check: enabled"
+        )
+    else
+        print(
+            "[SimpleF4] GitHub update check: disabled"
+        )
+    end
+
+    print("========================================")
+end
+
+
 local function parseSimpleF4Version(value)
     value = string.Trim(tostring(value or ""))
     value = string.gsub(value, "^[vV]", "")
@@ -494,6 +533,20 @@ local function updateResult(remote, releaseData)
     SimpleF4.LatestRelease = releaseData or {
         Version = remote,
     }
+
+    print(
+        "[SimpleF4] Latest GitHub version: v"
+        .. tostring(remote)
+    )
+
+    if releaseData
+    and releaseData.Name
+    and releaseData.Name ~= "" then
+        print(
+            "[SimpleF4] Latest release: "
+            .. tostring(releaseData.Name)
+        )
+    end
 
     if isNewerSimpleF4Version(
         remote,
@@ -916,6 +969,10 @@ addSimpleF4Command("simplef4_commands", "commands", function(ply)
             )
         end
     end
+end)
+
+timer.Simple(0, function()
+    printStartupVersion()
 end)
 
 timer.Simple(3, function()
