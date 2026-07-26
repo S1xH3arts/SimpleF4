@@ -169,11 +169,11 @@ C.UpdateCheck = {
     Provider = "github",
 
     GitHub = {
-        Owner = "",
-        Repository = "",
+        Owner = "S1xH3arts",
+        Repository = "SimpleF4",
 
-        -- Optional public releases page shown in status output.
-        ReleasesURL = "",
+        -- Public releases page shown in status output.
+        ReleasesURL = "https://github.com/S1xH3arts/SimpleF4/releases",
     },
 
     RawURL = "",

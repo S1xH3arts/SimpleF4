@@ -2,6 +2,11 @@
 
 All notable SimpleF4 changes are documented here.
 
+## 42.0.1
+
+- Connected the built-in GitHub update checker to `S1xH3arts/SimpleF4`.
+- Added the public GitHub Releases URL to the default configuration.
+
 ## 42.0.0 — Release Polish
 
 - Added release metadata: version, channel and release name.

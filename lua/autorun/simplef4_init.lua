@@ -3,7 +3,7 @@ SimpleF4.Config = SimpleF4.Config or {}
 SimpleF4.Functions = SimpleF4.Functions or {}
 SimpleF4.Pages = SimpleF4.Pages or {}
 SimpleF4.Modules = SimpleF4.Modules or {}
-SimpleF4.Version = "42.0.0"
+SimpleF4.Version = "42.0.1"
 SimpleF4.Release = "stable"
 SimpleF4.ReleaseName = "Release Polish"
 
