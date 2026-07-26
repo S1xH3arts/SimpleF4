@@ -162,7 +162,7 @@ C.ShowHeaderMoney = true
 --=====================================================
 
 C.UpdateCheck = {
-    Enabled = false,
+    Enabled = true,
 
     -- "github" uses the latest published GitHub Release.
     -- "raw" keeps compatibility with the older plain-text version URL.
